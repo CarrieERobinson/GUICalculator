@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -8,12 +9,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="it226cerobi1.It226cerobi1Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #ffdecc;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it226cerobi1.It226cerobi1Controller">
     <stylesheets>
         <URL value="@it226cerobi1.css" />
     </stylesheets>
    <children>
-      <GridPane layoutY="55.0" prefHeight="445.0" prefWidth="400.0">
+      <GridPane hgap="5.0" layoutY="55.0" prefHeight="445.0" prefWidth="400.0" style="-fx-border-color: ffffff; -fx-border-width: 10;" vgap="5.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -27,24 +28,27 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="subtractButton" mnemonicParsing="false" prefHeight="119.0" prefWidth="151.0" text="-" />
-            <Button fx:id="divButton" mnemonicParsing="false" prefHeight="132.0" prefWidth="188.0" text="/" GridPane.columnIndex="1" />
-            <Button fx:id="multButton" mnemonicParsing="false" prefHeight="137.0" prefWidth="203.0" text="X" GridPane.columnIndex="2" />
-            <Button fx:id="button1" mnemonicParsing="false" prefHeight="141.0" prefWidth="188.0" text="1" GridPane.rowIndex="1" />
-            <Button fx:id="button2" mnemonicParsing="false" prefHeight="137.0" prefWidth="213.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="button3" mnemonicParsing="false" prefHeight="119.0" prefWidth="221.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="button4" mnemonicParsing="false" prefHeight="100.0" prefWidth="148.0" text="4" GridPane.rowIndex="2" />
-            <Button fx:id="button5" mnemonicParsing="false" prefHeight="132.0" prefWidth="223.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="button6" mnemonicParsing="false" prefHeight="121.0" prefWidth="230.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button fx:id="button7" mnemonicParsing="false" prefHeight="105.0" prefWidth="166.0" text="7" GridPane.rowIndex="3" />
-            <Button fx:id="button8" mnemonicParsing="false" prefHeight="143.0" prefWidth="236.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="button9" mnemonicParsing="false" prefHeight="127.0" prefWidth="170.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="addButton" mnemonicParsing="false" prefHeight="100.0" prefWidth="163.0" text="+" GridPane.rowIndex="4" />
-            <Button fx:id="button0" mnemonicParsing="false" prefHeight="124.0" prefWidth="185.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="130.0" prefWidth="199.0" text="CLEAR" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button fx:id="subtractButton" mnemonicParsing="false" prefHeight="119.0" prefWidth="151.0" styleClass="numButton" text="-" />
+            <Button fx:id="divButton" mnemonicParsing="false" prefHeight="132.0" prefWidth="188.0" styleClass="numButton" text="/" GridPane.columnIndex="1" />
+            <Button fx:id="multButton" mnemonicParsing="false" prefHeight="137.0" prefWidth="203.0" styleClass="numButton" text="X" GridPane.columnIndex="2" />
+            <Button fx:id="button1" mnemonicParsing="false" prefHeight="141.0" prefWidth="188.0" styleClass="numButton" text="1" GridPane.rowIndex="1" />
+            <Button fx:id="button2" mnemonicParsing="false" prefHeight="137.0" prefWidth="213.0" styleClass="numButton" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="button3" mnemonicParsing="false" prefHeight="119.0" prefWidth="221.0" styleClass="numButton" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="button4" mnemonicParsing="false" prefHeight="100.0" prefWidth="148.0" styleClass="numButton" text="4" GridPane.rowIndex="2" />
+            <Button fx:id="button5" mnemonicParsing="false" prefHeight="132.0" prefWidth="223.0" styleClass="numButton" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="button6" mnemonicParsing="false" prefHeight="121.0" prefWidth="230.0" styleClass="numButton" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="button7" mnemonicParsing="false" prefHeight="105.0" prefWidth="166.0" styleClass="numButton" text="7" GridPane.rowIndex="3" />
+            <Button fx:id="button8" mnemonicParsing="false" prefHeight="143.0" prefWidth="236.0" styleClass="numButton" text="8" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="button9" mnemonicParsing="false" prefHeight="127.0" prefWidth="170.0" styleClass="numButton" text="9" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="addButton" mnemonicParsing="false" prefHeight="100.0" prefWidth="163.0" styleClass="numButton" text="+" GridPane.rowIndex="4" />
+            <Button fx:id="button0" mnemonicParsing="false" prefHeight="124.0" prefWidth="185.0" styleClass="numButton" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="130.0" prefWidth="199.0" style="-: ;" styleClass="numButton" text="CLEAR" GridPane.columnIndex="2" GridPane.rowIndex="4" />
          </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
       </GridPane>
       <TextField layoutX="14.0" layoutY="14.0" prefHeight="19.0" prefWidth="254.0" />
-      <Button fx:id="calculateButton" layoutX="290.0" layoutY="14.0" mnemonicParsing="false" text="Calculate" />
+      <Button fx:id="calculateButton" layoutX="290.0" layoutY="14.0" mnemonicParsing="false" styleClass="calcButton" text="Calculate" />
    </children>
 </AnchorPane>

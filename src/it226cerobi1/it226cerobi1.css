@@ -5,3 +5,11 @@
 .mainFxmlClass {
 
 }
+
+.numButton{
+    -fx-background-color: #ccfff1;
+}
+
+.calcButton{
+    -fx-background-color: #ccfff1;
+}
