@@ -35,6 +35,7 @@ public class It226cerobi1Controller implements Initializable {
         
     }    
     
+//===========================onButtonClick()====================================
     @FXML
     public void onButtonClick(ActionEvent event)
     {
@@ -43,19 +44,22 @@ public class It226cerobi1Controller implements Initializable {
             Button button = (Button)event.getSource();
             //add button text to screen text
             resultBox.setText(resultBox.getText().trim() + button.getText().trim());
-            equation = equation + button.getText(); //add to equation
+            equation = resultBox.getText(); //add to equation
         }
     }
     
+//==============================onClearButtonClicked()==========================
     public void onClearButtonClicked(ActionEvent event)
     {
         resultBox.setText("");
         equation = "";
     }
-    
+
+//====================onCalculateButtonClicked()================================
     public void onCalculateButtonClicked(ActionEvent event)
     {
-        //put the solve function here
+        //put the solve function here and set textfield text to answer
+        //clear
     }
     
 }
