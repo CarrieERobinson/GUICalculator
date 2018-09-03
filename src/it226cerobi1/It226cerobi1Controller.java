@@ -104,8 +104,36 @@ public class It226cerobi1Controller implements Initializable {
         return operandStack.pop();
     }
     
+    //===============================process()======================================
+    //will process instructions on top of each stack then push the answer to the
+    //operandStack
     public static void process()
     {
+        char operator = operatorStack.pop();
+        //System.out.println(operator);
+        double operand1 = operandStack.pop();
+        //System.out.println("Op 1: " + operand1);
+        double operand2 = operandStack.pop();
+        //System.out.println("Op 2: " + operand2);
         
+        //checks operation to be performed on 2 operands then performs it and
+        //pushes the answer to the top of the operand stack. This keeps a running
+        //total to use as more calculations are made
+        switch(operator)
+        {
+            case '+':
+                operandStack.push(operand2 + operand1);
+                break;
+            case '-':
+                operandStack.push(operand2 - operand1);
+                break;
+            case '*':
+                operandStack.push(operand2 * operand1);
+                break;
+            case '/':
+                operandStack.push(operand2 / operand1);
+                break;
+            default: System.out.println("Good job, you broke it!");
+        }
     }
 }
