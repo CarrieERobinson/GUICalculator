@@ -42,7 +42,7 @@
             <Button fx:id="button9" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="127.0" prefWidth="170.0" styleClass="numButton" text="9" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Button fx:id="addButton" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="100.0" prefWidth="163.0" styleClass="numButton" text="+" GridPane.rowIndex="4" />
             <Button fx:id="button0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="124.0" prefWidth="185.0" styleClass="numButton" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="130.0" prefWidth="199.0" style="-: ;" styleClass="numButton" text="CLEAR" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button fx:id="clearButton" mnemonicParsing="false" onAction="#onClearButtonClicked" prefHeight="130.0" prefWidth="199.0" style="-: ;" styleClass="numButton" text="CLEAR" GridPane.columnIndex="2" GridPane.rowIndex="4" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

@@ -47,4 +47,15 @@ public class It226cerobi1Controller implements Initializable {
         }
     }
     
+    public void onClearButtonClicked(ActionEvent event)
+    {
+        resultBox.setText("");
+        equation = "";
+    }
+    
+    public void onCalculateButtonClicked(ActionEvent event)
+    {
+        //put the solve function here
+    }
+    
 }
