@@ -31,15 +31,19 @@ public class It226cerobi1Controller implements Initializable {
     @FXML
     TextField resultBox;
     String equation = "";
-
+    //help prevent multiple operators being pressed in a row
+    Boolean lastPressOperator = false;
+    
+    //Stacks to hold my operators and operands
     public static Stack<Character> operatorStack = new Stack<>();
     public static Stack<Double> operandStack = new Stack<>();
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-        String equation = ""; //Will store equation for later parsing
+        
         
     }    
     
@@ -50,13 +54,48 @@ public class It226cerobi1Controller implements Initializable {
         if(event.getSource() instanceof Button)
         {
             Button button = (Button)event.getSource();
-            //add button text to screen text
-            resultBox.setText(resultBox.getText().trim() + button.getText().trim());
-            equation = resultBox.getText(); //add to equation
+            String text = button.getText();
+            if(!Character.isDigit(text.charAt(0)) && equation.length() == 0)
+            {
+                //do nothing
+                //there's probably a better way to do this, but whatever
+            }
+            else
+            {
+                //if another operator is pressed in a row, change the operator
+                if(lastPressOperator && !Character.isDigit(text.charAt(0)))
+                {
+                    //grab current equation
+                    String updatedString = resultBox.getText();
+                    //create a substring cutting out previous operator
+                    updatedString = updatedString.substring(0, updatedString.length() - 1);
+                    //add new operator
+                    updatedString+=text.charAt(0);
+                    //update resultBox and equation
+                    resultBox.setText(updatedString);
+                    equation = updatedString;
+                }
+                else
+                {
+                    //add button text to screen text
+                    resultBox.setText(resultBox.getText() + text.trim());
+                    equation = resultBox.getText(); //add to equation
+
+                    if(!Character.isDigit(text.charAt(0)))
+                    {
+                        lastPressOperator = true; //last press was operator
+                    }else
+                        lastPressOperator = false; //last press was not operator
+                }
+                
+                
+            }
+            
         }
     }
     
 //==============================onClearButtonClicked()==========================
+    //Clears resultBox and equation
     public void onClearButtonClicked(ActionEvent event)
     {
         resultBox.setText("");
@@ -179,3 +218,13 @@ public class It226cerobi1Controller implements Initializable {
         }
     }
 }
+
+
+//Improvements I could make:
+//2. Modify so that if user enters an operand after calculating, the old answer
+//is cleared, but if they enter an operator, it adds on to the equation
+//3. Modify so that an error shows in the window when invalid input is recieved
+//  (May not need if operators cannot be added multiple times in a row or at
+//  the beginning of an equation)
+//4. Add more operations and improve layout
+//5. Add icons for taskbar and title area
