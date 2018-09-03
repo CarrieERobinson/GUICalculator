@@ -26,6 +26,7 @@ public class It226cerobi1Controller implements Initializable {
     
     @FXML
     TextField resultBox;
+    String equation = "";
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -42,6 +43,7 @@ public class It226cerobi1Controller implements Initializable {
             Button button = (Button)event.getSource();
             //add button text to screen text
             resultBox.setText(resultBox.getText().trim() + button.getText().trim());
+            equation = equation + button.getText(); //add to equation
         }
     }
     
