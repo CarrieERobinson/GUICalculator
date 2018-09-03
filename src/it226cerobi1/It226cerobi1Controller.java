@@ -7,16 +7,14 @@ package it226cerobi1;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-<<<<<<< HEAD
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-=======
+
 import java.util.Stack;
 import javafx.fxml.Initializable;
->>>>>>> functions
 
 /**
  * FXML Controller class
@@ -28,15 +26,14 @@ public class It226cerobi1Controller implements Initializable {
     /**
      * Initializes the controller class.
      */
-<<<<<<< HEAD
+    
     
     @FXML
     TextField resultBox;
     String equation = "";
-=======
+
     public static Stack<Character> operatorStack = new Stack<>();
     public static Stack<Double> operandStack = new Stack<>();
->>>>>>> functions
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -46,7 +43,6 @@ public class It226cerobi1Controller implements Initializable {
         
     }    
     
-<<<<<<< HEAD
 //===========================onButtonClick()====================================
     @FXML
     public void onButtonClick(ActionEvent event)
@@ -70,12 +66,11 @@ public class It226cerobi1Controller implements Initializable {
 //====================onCalculateButtonClicked()================================
     public void onCalculateButtonClicked(ActionEvent event)
     {
-        //put the solve function here and set textfield text to answer
-        //clear
+        //solve and print result
+        resultBox.setText(Double.toString(solve(equation)));
     }
     
-}
-=======
+
 //========================solve()===============================================
     //will interpret and solve an equation in string form; prints and returns the answer
     public static double solve(String equation)
@@ -92,9 +87,11 @@ public class It226cerobi1Controller implements Initializable {
                 String num = ""; //this string will hold the digits in the number to be pushed later
                 
                 //continue through equatiion until operand or end of string is reached
-                while(j < equation.length() && Character.isDigit(equation.charAt(j)))
+                while(j < equation.length() && (Character.isDigit(equation.charAt(j))
+                        || equation.charAt(j) == '.'))
                 {
                     num += equation.charAt(j);//add number to string
+                    System.out.println(num);
                     j++; //increment j
                 }
                 
@@ -132,7 +129,8 @@ public class It226cerobi1Controller implements Initializable {
                 }else
                 {
                     //the character is invalid!
-                    System.out.println("Invalid character detected!");
+                    System.out.println("#Invalid character detected!  " + equation.charAt(i));
+                    
                     return 0;
                 }
                 
@@ -144,7 +142,7 @@ public class It226cerobi1Controller implements Initializable {
             process(); //process remaining operations until the stack is empty
         }
         
-        System.out.println(operandStack.peek());
+        System.out.printf("%.2f\n\n", operandStack.peek());
         return operandStack.pop();
     }
     
@@ -181,4 +179,3 @@ public class It226cerobi1Controller implements Initializable {
         }
     }
 }
->>>>>>> functions
