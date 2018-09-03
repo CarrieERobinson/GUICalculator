@@ -25,8 +25,28 @@ public class It226cerobi1Controller implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
+        String equation = ""; //Will store equation for later parsing
         
         
     }    
     
+    
+    public static double solveEq(String equation)
+    {
+        double solution;
+        equation = equation.replace("//s", "");
+        String operands[] = new String[equation.length()];
+        
+        for(int i = 0; i < equation.length(); i++)
+        {
+            //
+            if(i == 0 && Character.isAlphabetic(equation.charAt(i)))
+            {
+                
+            }
+        }
+        
+        
+        return solution;
+    }
 }
