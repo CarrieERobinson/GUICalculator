@@ -31,6 +31,7 @@ public class It226cerobi1Controller implements Initializable {
     @FXML
     TextField resultBox;
     String equation = "";
+    Boolean answerInResultBox = false;
     //help prevent multiple operators being pressed in a row
     Boolean lastPressOperator = false;
     
@@ -77,6 +78,12 @@ public class It226cerobi1Controller implements Initializable {
                 }
                 else
                 {
+                    if(answerInResultBox && Character.isDigit(text.charAt(0)))
+                    {
+                        //clear text and equation first
+                        resultBox.setText("");
+                        equation = "";
+                    }
                     //add button text to screen text
                     resultBox.setText(resultBox.getText() + text.trim());
                     equation = resultBox.getText(); //add to equation
@@ -86,6 +93,8 @@ public class It226cerobi1Controller implements Initializable {
                         lastPressOperator = true; //last press was operator
                     }else
                         lastPressOperator = false; //last press was not operator
+                    
+                    answerInResultBox = false; //update this flag
                 }
                 
                 
@@ -107,6 +116,8 @@ public class It226cerobi1Controller implements Initializable {
     {
         //solve and print result
         resultBox.setText(Double.toString(solve(equation)));
+        //flag to say that the resultBox is holding a previous answer
+        answerInResultBox = true;
     }
     
 
