@@ -232,10 +232,9 @@ public class It226cerobi1Controller implements Initializable {
 
 
 //Improvements I could make:
-//2. Modify so that if user enters an operand after calculating, the old answer
-//is cleared, but if they enter an operator, it adds on to the equation
-//3. Modify so that an error shows in the window when invalid input is recieved
+//3. M0odify so that an error shows in the window when invalid input is recieved
 //  (May not need if operators cannot be added multiple times in a row or at
 //  the beginning of an equation)
 //4. Add more operations and improve layout
 //5. Add icons for taskbar and title area
+//6. Can't handle negative numbers
